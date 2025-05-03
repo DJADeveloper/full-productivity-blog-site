@@ -7,7 +7,7 @@ const products = [
     category: "Course",
     description: "Learn how to leverage AI tools to 10x your productivity and automate repetitive tasks.",
     price: "$199",
-    image: "/images/store/productivity-course.jpg",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800",
     link: "/store/ai-productivity-mastery"
   },
   {
@@ -15,7 +15,7 @@ const products = [
     category: "Templates",
     description: "50+ ready-to-use templates for automating your business workflows with popular AI tools.",
     price: "$79",
-    image: "/images/store/templates-bundle.jpg",
+    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?auto=format&fit=crop&q=80&w=800",
     link: "/store/automation-templates"
   },
   {
@@ -23,7 +23,7 @@ const products = [
     category: "Guide",
     description: "Step-by-step guide to implementing AI tools in your business for maximum efficiency.",
     price: "$49",
-    image: "/images/store/implementation-guide.jpg",
+    image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&q=80&w=800",
     link: "/store/implementation-guide"
   }
 ];
@@ -31,7 +31,7 @@ const products = [
 
 <BlogLayout title="Store - AI Productivity Resources and Courses">
   <!-- Page Header with Background -->
-  <div class="w-full py-12 mb-12" style="background: linear-gradient(135deg, #F8F5FF, white, #F0FDF9)">
+  <div class="w-full py-12 mb-12 bg-gradient-to-br from-[#F8F5FF] via-white to-[#F0FDF9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <header class="text-center">
         <h1 class="font-heading text-4xl md:text-5xl font-bold mb-6" style="color: #1E293B">
@@ -48,19 +48,20 @@ const products = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {products.map((product) => (
-        <a href={product.link} class="group">
-          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+        <a href={product.link} class="group h-full">
+          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full flex flex-col">
             <div class="relative">
               <img 
                 src={product.image} 
                 alt={product.title}
                 class="w-full h-48 object-cover"
               />
+              <div class="absolute inset-0 bg-gradient-to-br from-black/10 to-transparent"></div>
               <span class="absolute top-4 left-4 inline-block px-3 py-1 text-sm font-medium rounded-full" style="color: #2B9CFF; background-color: white">
                 {product.category}
               </span>
             </div>
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <div class="flex justify-between items-start mb-3">
                 <h3 class="font-heading text-xl font-bold transition-colors" style="color: #1E293B">
                   {product.title}
@@ -69,8 +70,8 @@ const products = [
                   {product.price}
                 </span>
               </div>
-              <p class="mb-6" style="color: #64748B">{product.description}</p>
-              <div class="inline-flex items-center justify-center w-full text-white rounded-full px-6 py-3 font-medium transition-all duration-300" style="background-color: #2B9CFF; hover:background-color: #1a8ef0">
+              <p class="mb-6 flex-grow" style="color: #64748B">{product.description}</p>
+              <div class="inline-flex items-center justify-center w-full text-white rounded-full px-6 py-3 font-medium transition-all duration-300 mt-auto" style="background-color: #2B9CFF; hover:background-color: #1a8ef0">
                 Learn More
               </div>
             </div>
