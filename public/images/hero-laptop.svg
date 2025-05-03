@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Laptop Base -->
+  <rect x="50" y="50" width="500" height="300" rx="20" fill="#2A2F3E"/>
+  
+  <!-- Screen -->
+  <rect x="70" y="70" width="460" height="260" rx="10" fill="white"/>
+  
+  <!-- Analytics Elements -->
+  <!-- Graph -->
+  <rect x="100" y="100" width="200" height="120" rx="8" fill="#F5F7FF"/>
+  <path d="M110 180 L140 150 L170 170 L200 130 L230 160 L260 140" stroke="#4F6BF4" stroke-width="2"/>
+  
+  <!-- Bar Chart -->
+  <rect x="320" y="100" width="180" height="120" rx="8" fill="#F5F7FF"/>
+  <rect x="340" y="160" width="20" height="40" fill="#4F6BF4"/>
+  <rect x="370" y="140" width="20" height="60" fill="#2EE6A8"/>
+  <rect x="400" y="120" width="20" height="80" fill="#4F6BF4"/>
+  <rect x="430" y="150" width="20" height="50" fill="#2EE6A8"/>
+  
+  <!-- List Items -->
+  <rect x="100" y="240" width="400" height="10" rx="5" fill="#F5F7FF"/>
+  <rect x="100" y="260" width="380" height="10" rx="5" fill="#F5F7FF"/>
+  <rect x="100" y="280" width="360" height="10" rx="5" fill="#F5F7FF"/>
+</svg> 

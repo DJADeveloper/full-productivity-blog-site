@@ -1,11 +1,98 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import BlogPostGrid from '../components/BlogPostGrid.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const blogPosts = [
+  {
+    title: "Maximizing Productivity with AI Tools",
+    category: "Productivity",
+    description: "Learn how to leverage AI tools to streamline your workflow and boost productivity.",
+    image: "/images/blog/productivity.svg",
+    link: "/blog/maximizing-productivity"
+  },
+  {
+    title: "The Future of AI in Business",
+    category: "AI",
+    description: "Explore how artificial intelligence is transforming business operations and decision-making.",
+    image: "/images/blog/ai-future.svg",
+    link: "/blog/ai-future"
+  },
+  {
+    title: "Building Effective AI Workflows",
+    category: "Workflows",
+    description: "Step-by-step guide to creating AI-powered workflows that save time and reduce errors.",
+    image: "/images/blog/workflows.svg",
+    link: "/blog/ai-workflows"
+  }
+];
+
+const popularTools = [
+  {
+    name: "ChatGPT",
+    description: "AI-powered chatbot for natural language processing and generation",
+    image: "/images/tools/chatgpt.svg",
+    link: "/tools/chatgpt"
+  },
+  {
+    name: "Notion AI",
+    description: "AI-enhanced workspace for notes, docs and project management",
+    image: "/images/tools/notion.svg", 
+    link: "/tools/notion"
+  },
+  {
+    name: "Jasper",
+    description: "AI writing assistant for marketing copy and content creation",
+    image: "/images/tools/jasper.svg",
+    link: "/tools/jasper"
+  }
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Problem Solvio - AI Productivity Tools and Resources">
+  <Hero />
+  
+  <main>
+    <!-- Featured Blog Posts -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Latest Insights</h2>
+          <p class="mt-4 text-xl text-gray-600">Expert guidance on leveraging AI for maximum productivity</p>
+        </div>
+        <BlogPostGrid posts={blogPosts} variant="grid" />
+      </div>
+    </section>
+
+    <!-- Popular Tools -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900">Popular Tools</h2>
+          <p class="mt-4 text-xl text-gray-600">Essential AI tools to enhance your productivity</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {popularTools.map(tool => (
+            <a href={tool.link} class="group">
+              <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+                <div class="relative">
+                  <img 
+                    src={tool.image} 
+                    alt={tool.name}
+                    class="w-full h-48 object-cover"
+                  />
+                </div>
+                <div class="p-6">
+                  <h3 class="font-heading text-xl font-bold text-gray-900 group-hover:text-primary-blue transition-colors">
+                    {tool.name}
+                  </h3>
+                  <p class="mt-2 text-gray-600">{tool.description}</p>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

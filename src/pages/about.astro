@@ -1,0 +1,116 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const teamMembers = [
+  {
+    name: "Sarah Johnson",
+    role: "Founder & AI Specialist",
+    bio: "With over a decade of experience in productivity systems and AI technology, Sarah helps entrepreneurs leverage artificial intelligence to solve complex business challenges.",
+    image: "/images/team/sarah.jpg"
+  }
+];
+
+const features = [
+  {
+    title: "AI-Powered Solutions",
+    description: "We leverage cutting-edge AI technology to help you solve complex business problems efficiently.",
+    icon: "🤖"
+  },
+  {
+    title: "Proven Systems",
+    description: "Our methods and templates are battle-tested by successful entrepreneurs and businesses.",
+    icon: "✅"
+  },
+  {
+    title: "Continuous Innovation",
+    description: "We stay at the forefront of AI advancements to bring you the latest and most effective solutions.",
+    icon: "🚀"
+  }
+];
+---
+
+<BlogLayout title="About - Problem Solvio">
+  <!-- Page Header with Background -->
+  <div class="w-full py-12 mb-12" style="background: linear-gradient(135deg, #F8F5FF, white, #F0FDF9)">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="text-center">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-6" style="color: #1E293B">
+          About Us
+        </h1>
+        <p class="text-xl max-w-2xl mx-auto" style="color: #64748B">
+          We help entrepreneurs and businesses solve complex problems using AI-powered solutions.
+        </p>
+      </header>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Mission Section -->
+    <section class="mb-16">
+      <h2 class="font-heading text-3xl font-bold mb-6" style="color: #1E293B">Our Mission</h2>
+      <p class="text-lg mb-8" style="color: #64748B">
+        At Problem Solvio, we're dedicated to helping entrepreneurs and businesses harness the power of AI to solve complex challenges and boost productivity. We believe that with the right tools and systems, any business can thrive in the digital age.
+      </p>
+      
+      <!-- Features Grid -->
+      <div class="grid md:grid-cols-3 gap-8 mt-12">
+        {features.map((feature) => (
+          <div class="bg-white p-6 rounded-xl shadow-sm">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="font-heading text-xl font-bold mb-2" style="color: #1E293B">
+              {feature.title}
+            </h3>
+            <p style="color: #64748B">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="mb-16">
+      <h2 class="font-heading text-3xl font-bold mb-6" style="color: #1E293B">Our Team</h2>
+      <div class="grid md:grid-cols-1 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/3">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  class="w-full h-48 md:h-full object-cover"
+                />
+              </div>
+              <div class="md:w-2/3 p-6 md:p-8">
+                <h3 class="font-heading text-2xl font-bold mb-2" style="color: #1E293B">
+                  {member.name}
+                </h3>
+                <p class="font-medium mb-4" style="color: #2B9CFF">{member.role}</p>
+                <p style="color: #64748B">{member.bio}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="mb-16">
+      <div class="rounded-xl p-8 text-center" style="background: linear-gradient(135deg, #F8F5FF, white, #F0FDF9)">
+        <h2 class="font-heading text-3xl font-bold mb-4" style="color: #1E293B">
+          Get in Touch
+        </h2>
+        <p class="text-lg mb-6" style="color: #64748B">
+          Have questions about how we can help your business? We'd love to hear from you.
+        </p>
+        <a
+          href="mailto:contact@problemsolvio.com"
+          class="inline-flex items-center justify-center text-white rounded-full px-8 py-3 font-medium transition-all duration-300"
+          style="background-color: #2B9CFF; hover:background-color: #1a8ef0"
+        >
+          Contact Us
+        </a>
+      </div>
+    </section>
+  </div>
+</BlogLayout> 

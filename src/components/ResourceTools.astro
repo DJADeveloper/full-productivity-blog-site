@@ -1,0 +1,85 @@
+---
+const tools = [
+  {
+    name: "Jasper",
+    description: "AI-powered content creation platform",
+    category: "Content Creation",
+    image: "/images/tools/jasper.jpg",
+    link: "/resources/jasper"
+  },
+  {
+    name: "Notion AI",
+    description: "Intelligent workspace with AI capabilities",
+    category: "Productivity",
+    image: "/images/tools/notion-ai.jpg",
+    link: "/resources/notion-ai"
+  },
+  {
+    name: "Copy.ai",
+    description: "AI copywriting assistant",
+    category: "Marketing",
+    image: "/images/tools/copy-ai.jpg",
+    link: "/resources/copy-ai"
+  },
+  {
+    name: "Beehiiv",
+    description: "AI-powered newsletter platform",
+    category: "Email Marketing",
+    image: "/images/tools/beehiiv.jpg",
+    link: "/resources/beehiiv"
+  },
+  {
+    name: "KoalaWriter",
+    description: "AI content writer for SEO",
+    category: "Content Creation",
+    image: "/images/tools/koala-writer.jpg",
+    link: "/resources/koala-writer"
+  },
+  {
+    name: "Zapier",
+    description: "Automation platform with AI features",
+    category: "Automation",
+    image: "/images/tools/zapier.jpg",
+    link: "/resources/zapier"
+  }
+];
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">AI Tools & Resources</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Discover the most powerful AI tools to transform your business.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {tools.map((tool, index) => (
+        <a
+          href={tool.link}
+          class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-all duration-300 animate-slide-up"
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class="aspect-w-16 aspect-h-9">
+            <img
+              src={tool.image}
+              alt={tool.name}
+              class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-sm font-medium text-blue-600 bg-blue-50 rounded-full mb-2">
+              {tool.category}
+            </span>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+              {tool.name}
+            </h3>
+            <p class="text-gray-600">{tool.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section> 

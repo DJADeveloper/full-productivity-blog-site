@@ -1,0 +1,60 @@
+---
+const steps = [
+  {
+    title: "Discover Tools",
+    description: "Find the perfect AI tools for your business needs",
+    icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+    image: "/images/how-it-works/discover.jpg"
+  },
+  {
+    title: "Automate Work",
+    description: "Streamline your processes with AI automation",
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    image: "/images/how-it-works/automate.jpg"
+  },
+  {
+    title: "Scale Smarter",
+    description: "Grow your business efficiently with AI-powered systems",
+    icon: "M13 7h8m0 0v8m0-8l-8 8-4-4-6 6",
+    image: "/images/how-it-works/scale.jpg"
+  }
+];
+---
+
+<section class="py-20 bg-white">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">How It Works</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Transform your business in three simple steps with our AI-powered solutions.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {steps.map((step, index) => (
+        <div
+          class="group relative overflow-hidden rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow duration-300 animate-slide-up"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <div class="aspect-w-16 aspect-h-9">
+            <img
+              src={step.image}
+              alt={step.title}
+              class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={step.icon} />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">{step.title}</h3>
+            <p class="text-gray-600">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

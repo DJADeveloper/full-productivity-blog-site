@@ -1,0 +1,55 @@
+---
+const testimonials = [
+  {
+    quote: "The AI tools recommended here have transformed how I run my business. I've automated 80% of my daily tasks!",
+    author: "Sarah Johnson",
+    role: "Founder, Digital Marketing Agency",
+    image: "/images/testimonials/sarah.jpg"
+  },
+  {
+    quote: "As a solopreneur, these tools have been a game-changer. I can now focus on growth instead of getting bogged down in admin work.",
+    author: "Michael Chen",
+    role: "Independent Consultant",
+    image: "/images/testimonials/michael.jpg"
+  },
+  {
+    quote: "The productivity stack recommendations helped me streamline my workflow and double my output. Highly recommended!",
+    author: "Emily Rodriguez",
+    role: "Content Creator",
+    image: "/images/testimonials/emily.jpg"
+  }
+];
+---
+
+<section class="section bg-gradient-to-b from-gray-50 to-white">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="heading-2 mb-4">What Our Community Says</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Join thousands of entrepreneurs who have transformed their businesses with AI.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div
+          class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-slide-up"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <div class="flex items-center mb-6">
+            <img
+              src={testimonial.image}
+              alt={testimonial.author}
+              class="w-12 h-12 rounded-full object-cover mr-4"
+            />
+            <div>
+              <h3 class="font-semibold text-gray-900">{testimonial.author}</h3>
+              <p class="text-sm text-gray-600">{testimonial.role}</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"{testimonial.quote}"</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section> 

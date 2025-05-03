@@ -1,0 +1,82 @@
+---
+import BlogLayout from '../layouts/BlogLayout.astro';
+
+const products = [
+  {
+    title: "AI Productivity Mastery Course",
+    category: "Course",
+    description: "Learn how to leverage AI tools to 10x your productivity and automate repetitive tasks.",
+    price: "$199",
+    image: "/images/store/productivity-course.jpg",
+    link: "/store/ai-productivity-mastery"
+  },
+  {
+    title: "Business Automation Templates Bundle",
+    category: "Templates",
+    description: "50+ ready-to-use templates for automating your business workflows with popular AI tools.",
+    price: "$79",
+    image: "/images/store/templates-bundle.jpg",
+    link: "/store/automation-templates"
+  },
+  {
+    title: "AI Tools Implementation Guide",
+    category: "Guide",
+    description: "Step-by-step guide to implementing AI tools in your business for maximum efficiency.",
+    price: "$49",
+    image: "/images/store/implementation-guide.jpg",
+    link: "/store/implementation-guide"
+  }
+];
+---
+
+<BlogLayout title="Store - AI Productivity Resources and Courses">
+  <!-- Page Header with Background -->
+  <div class="w-full py-12 mb-12" style="background: linear-gradient(135deg, #F8F5FF, white, #F0FDF9)">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header class="text-center">
+        <h1 class="font-heading text-4xl md:text-5xl font-bold mb-6" style="color: #1E293B">
+          Store
+        </h1>
+        <p class="text-xl max-w-2xl mx-auto" style="color: #64748B">
+          Premium resources and courses to help you master AI-powered productivity.
+        </p>
+      </header>
+    </div>
+  </div>
+
+  <!-- Store Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {products.map((product) => (
+        <a href={product.link} class="group">
+          <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden">
+            <div class="relative">
+              <img 
+                src={product.image} 
+                alt={product.title}
+                class="w-full h-48 object-cover"
+              />
+              <span class="absolute top-4 left-4 inline-block px-3 py-1 text-sm font-medium rounded-full" style="color: #2B9CFF; background-color: white">
+                {product.category}
+              </span>
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="font-heading text-xl font-bold transition-colors" style="color: #1E293B">
+                  {product.title}
+                </h3>
+                <span class="text-2xl font-bold ml-4" style="color: #2EE6A8">
+                  {product.price}
+                </span>
+              </div>
+              <p class="mb-6" style="color: #64748B">{product.description}</p>
+              <div class="inline-flex items-center justify-center w-full text-white rounded-full px-6 py-3 font-medium transition-all duration-300" style="background-color: #2B9CFF; hover:background-color: #1a8ef0">
+                Learn More
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</BlogLayout> 

@@ -1,0 +1,69 @@
+---
+const tools = [
+  {
+    name: "Notion AI",
+    description: "AI-powered workspace for notes, tasks, and project management",
+    category: "Productivity",
+    image: "/images/tools/notion-ai.jpg",
+    link: "/resources/notion-ai"
+  },
+  {
+    name: "ChatGPT",
+    description: "Advanced AI assistant for content creation and automation",
+    category: "Content Creation",
+    image: "/images/tools/chatgpt.jpg",
+    link: "/resources/chatgpt"
+  },
+  {
+    name: "Midjourney",
+    description: "AI image generation for stunning visuals and graphics",
+    category: "Design",
+    image: "/images/tools/midjourney.jpg",
+    link: "/resources/midjourney"
+  }
+];
+---
+
+<section class="section bg-gray-50">
+  <div class="container">
+    <div class="text-center mb-12">
+      <h2 class="heading-2 mb-4">Featured AI Tools</h2>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        Discover the most powerful AI tools that are transforming businesses today.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {tools.map((tool, index) => (
+        <a
+          href={tool.link}
+          class="card group hover:shadow-lg transition-all duration-300 animate-slide-up bg-white"
+          style={`animation-delay: ${index * 0.2}s`}
+        >
+          <div class="aspect-w-16 aspect-h-9 mb-4 overflow-hidden rounded-t-lg">
+            <img
+              src={tool.image}
+              alt={tool.name}
+              class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div class="p-6">
+            <span class="inline-block px-3 py-1 text-sm font-medium text-primary-600 bg-primary-50 rounded-full mb-2">
+              {tool.category}
+            </span>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+              {tool.name}
+            </h3>
+            <p class="text-gray-600">{tool.description}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="/resources" class="btn btn-primary">
+        View All Tools
+      </a>
+    </div>
+  </div>
+</section> 
