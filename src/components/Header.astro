@@ -9,65 +9,67 @@ const navItems = [
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-    <div class="flex items-center justify-between">
-      <a href="/" class="flex items-center space-x-3">
-        <div class="flex items-center">
-          <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="5" y="5" width="90" height="90" rx="20" fill="#2B9CFF"/>
-            <path d="M25 50C25 36.2 36.2 25 50 25C63.8 25 75 36.2 75 50C75 63.8 63.8 75 50 75C36.2 75 25 63.8 25 50Z" stroke="#1E293B" stroke-width="6"/>
-            <path d="M40 50L47 57L62 42" stroke="#2EE6A8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <div class="ml-3">
-            <span class="text-2xl font-bold" style="color: #1E293B">Problem</span>
-            <span class="text-2xl font-bold" style="color: #2B9CFF">Solvio</span>
+  <nav class="w-full py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        <a href="/" class="flex items-center space-x-3">
+          <div class="flex items-center">
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="5" width="90" height="90" rx="20" fill="#2B9CFF"/>
+              <path d="M25 50C25 36.2 36.2 25 50 25C63.8 25 75 36.2 75 50C75 63.8 63.8 75 50 75C36.2 75 25 63.8 25 50Z" stroke="#1E293B" stroke-width="6"/>
+              <path d="M40 50L47 57L62 42" stroke="#2EE6A8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="ml-3">
+              <span class="text-2xl font-bold" style="color: #1E293B">Problem</span>
+              <span class="text-2xl font-bold" style="color: #2B9CFF">Solvio</span>
+            </div>
           </div>
-        </div>
-      </a>
-      
-      <div class="hidden md:flex items-center space-x-8">
-        {navItems.map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-600 hover:text-gray-900 transition-colors font-medium"
-          >
-            {item.label}
-          </a>
-        ))}
-        <a
-          href="#newsletter"
-          class="inline-flex items-center justify-center px-6 py-2 text-white font-medium rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
-          style="background-color: #2B9CFF; hover:background-color: #1a8ef0"
-        >
-          Join Newsletter
         </a>
+        
+        <div class="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="#newsletter"
+            class="inline-flex items-center justify-center px-6 py-2 text-white font-medium rounded-full transition-all duration-300 shadow-sm hover:shadow-md"
+            style="background-color: #2B9CFF; hover:background-color: #1a8ef0"
+          >
+            Join Newsletter
+          </a>
+        </div>
+
+        <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
 
-      <button class="md:hidden" id="mobile-menu-button" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div class="hidden md:hidden" id="mobile-menu">
-      <div class="px-2 pt-2 pb-3 space-y-1">
-        {navItems.map((item) => (
+      <!-- Mobile menu -->
+      <div class="hidden md:hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          {navItems.map((item) => (
+            <a
+              href={item.href}
+              class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
           <a
-            href={item.href}
-            class="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"
+            href="#newsletter"
+            class="block px-3 py-2 hover:bg-gray-50 rounded-lg transition-colors"
+            style="color: #2B9CFF"
           >
-            {item.label}
+            Join Newsletter
           </a>
-        ))}
-        <a
-          href="#newsletter"
-          class="block px-3 py-2 hover:bg-gray-50 rounded-lg transition-colors"
-          style="color: #2B9CFF"
-        >
-          Join Newsletter
-        </a>
+        </div>
       </div>
     </div>
   </nav>

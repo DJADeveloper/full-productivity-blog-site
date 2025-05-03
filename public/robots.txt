@@ -1,4 +1,14 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
-Sitemap: https://your-domain.com/sitemap-index.xml 
+# Sitemap location
+Sitemap: https://problemsolvio.com/sitemap.xml
+
+# Prevent crawling of admin or sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Crawl-delay for heavy crawlers
+Crawl-delay: 10 

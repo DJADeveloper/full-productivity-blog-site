@@ -4,18 +4,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          blue: '#2B9CFF',
-          mint: '#2EE6A8',
-          hover: {
-            blue: '#1a8ef0',
-            mint: '#20d696'
-          }
-        },
-        background: {
-          lavender: '#F8F5FF',
-          mint: '#F0FDF9'
-        },
+        'primary-blue': '#2B9CFF',
+        'primary-hover-blue': '#1a8ef0',
+        'primary-mint': '#2EE6A8',
+        'background-lavender': '#F8F5FF',
+        'background-mint': '#F0FDF9',
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',
@@ -54,8 +47,8 @@ export default {
         }
       },
       fontFamily: {
-        heading: ['Inter', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        'heading': ['Inter', 'sans-serif'],
+        'body': ['Inter', 'sans-serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Outfit', 'system-ui', 'sans-serif'],
       },
@@ -78,7 +71,5 @@ export default {
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [],
 } 
